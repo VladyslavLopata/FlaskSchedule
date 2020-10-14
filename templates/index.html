@@ -1,0 +1,24 @@
+{% extends "day.html" %}
+
+{% block dayContent %}
+
+
+    {% for day in days %}
+        <div class="col">
+            <h3 class="mb-4">{{ day.day }}</h3>
+            {% for lesson in lessons %}
+                {% if lesson.day == day.day %}
+                    <div class="border rounded mt-2">
+                        <p class="mt-3 ml-3">{{ lesson.number }}.
+                            <a href="{{ lesson.data.link }}" target="_blank">{{ lesson.data.name }}</a></p>
+                        <hr>
+                        <p class="mt-0 ml-3">Початок: {{ lesson.time.strftime('%H:%M') }}<br>
+                            Викладач: {{ lesson.data.teacher }}</p>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+{% endblock %}
