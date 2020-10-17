@@ -1,8 +1,6 @@
-{% extends "day.html" %}
+{% extends "index.html" %}
 
 {% block dayContent %}
-
-
     {% for day in days %}
         <div class="col">
             <h3 class="mb-4">{{ day.day }}</h3>
@@ -20,5 +18,4 @@
             {% endfor %}
         </div>
     {% endfor %}
-
 {% endblock %}
